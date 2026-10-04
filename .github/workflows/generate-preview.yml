@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'scripts/generate_preview.py'
+      - 'scripts/generate_preview_handwrite.py'
       - '.github/workflows/generate-preview.yml'
   workflow_dispatch:
 
@@ -27,7 +28,7 @@ jobs:
           test -s fonts/LXGWWenKai-Regular.ttf
 
       - name: Generate images
-        run: python3 scripts/generate_preview.py
+        run: python3 scripts/generate_preview_handwrite.py
 
       - name: Commit generated images
         run: |
